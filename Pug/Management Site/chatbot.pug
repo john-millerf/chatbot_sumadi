@@ -1,56 +1,83 @@
 extend includes/layout-chatbot.pug
 block main-content
     .chatbot
-        .chatbot__header
-            img(src="images/robot_avatar.png" class="chatbot__header-image")
-            .chatbot__title SUMADI Chatbot
-            .chatbot__close-top
-                i.fas.fa-times
-        .chatbot__chat-container
-            .chatbot__chat-subcontainer
-                .message.message--received
-                    img(src="images/robot_avatar.png" class="message__sent-icon")
-                    .message__chatbox.message__chatbox--received
-                        .message__title {CHATBOT.NAME}
-                        .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                .message--divider
-                .message.message--sent
-                    .message__chatbox.message__chatbox--sent
-                        .message__body ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                .message.message--sent
-                    .message__chatbox.message__chatbox--sent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                .message__confirmation ✓ 10:21 am
-                .message--divider
-                .message.message--received
-                    img(src="images/robot_avatar.png" class="message__sent-icon")
-                    .message__chatbox.message__chatbox--received
-                        .message__title {CHATBOT.NAME}
-                        .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                .message.message--received
-                    img(src="images/robot_avatar.png" class="message__sent-icon")
-                    .message__chatbox.message__chatbox--received
-                        .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                .message.message--received
-                    img(src="images/robot_avatar.png" class="message__sent-icon")
-                    .message__chatbox.message__chatbox--received
-                        .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        
-                        .message__footer {CHATBOT.NAME}
-                .message--divider
-                .message--option Option 1
-                .message--option Option 2
-                .message--option Option 3
-                .message--option Option 4
-                .message--divider
-                .message.message--sent
-                    .message__chatbox.message__chatbox--sent.chatbot__review
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.far.fa-star
-                .message.message__loading
-                    img(src="images/robot_avatar.png" class="message__sent-icon")
-                    +chatLoader()
+        .chatbot__main
+            .chatbot__header
+                img(src="images/robot_avatar.png" class="chatbot__header-image")
+                .chatbot__title SUMADI Chatbot
+                .chatbot__close-top
+                    i.fas.fa-times
+            .chatbot__chat-container
+                .chatbot__chat-subcontainer
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received
+                            .message__title {CHATBOT.NAME}
+                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message--divider
+                    .message.message--sent
+                        .message__chatbox.message__chatbox--sent
+                            .message__body ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message.message--sent
+                        .message__chatbox.message__chatbox--sent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message__confirmation ✓ 10:21 am
+                    .message--divider
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received
+                            .message__title {CHATBOT.NAME}
+                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received
+                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received
+                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        
+                            .message__footer {CHATBOT.NAME}
+                    .message--divider
+                    .message--option Option 1
+                    .message--option Option 2
+                    .message--option Option 3
+                    .message--option Option 4
+                    .message--divider
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received
+                            .message__body Please rate your experience before you leave.
+                    .message.message--received
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        .message__chatbox.message__chatbox--received.chatbot__review
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.fas.fa-star
+                            i.far.fa-star
+                    .message.message--received
+                        .message--card
+                            .card__col--left
+                                img(src="images/Robot Avatars_4.png" class="message__sent-icon")
+                            .card__col--right
+                                .message__title--card Generic Title 1
+                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    .message.message--received
+                        .message--card
+                            .card__col--left
+                                img(src="images/Robot Avatars_5.png" class="message__sent-icon")
+                            .card__col--right
+                                .message__title--card Generic Title 2
+                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    .message.message--received
+                        .message--card
+                            .card__col--left
+                                img(src="images/Robot Avatars_6.png" class="message__sent-icon")
+                            .card__col--right
+                                .message__title--card Generic Title 3
+                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt                                
+                    .message.message__loading
+                        img(src="images/robot_avatar.png" class="message__sent-icon")
+                        +chatLoader()
             .chatbot__bottom
                 .chatbot__type
                     .chatbot__type-icon
