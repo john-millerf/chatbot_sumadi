@@ -1,4 +1,4 @@
-.chatbot {
+.chat {
     position: fixed;
     bottom: 30px;
     right: 20px;
@@ -10,11 +10,11 @@
     font-family: $font-core;
 }
 
-.chatbot__main {
+.chat__main {
     height: calc(100% - 60px);
 }
 
-.chatbot__header {
+.chat__header {
     display: flex;
     align-items: center;
     padding: 0px $spacer-s;
@@ -24,16 +24,22 @@
     background-color:$black;
     font-weight: 600;
     border-radius: 10px 10px 0px 0px;
-    .chatbot__header-image {
+    .chat__avatar {
+        background-image: url("../images/robot_avatar.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: white;
+        border-radius: 50%;
         height: 30px;
         width: 30px;
     }
-    .chatbot__title {
+    .chat__title {
         color: $white;
         font-size: $text-s;
         margin-left: 15px;
     }
-    .chatbot__close-top {
+    .chat__close-top {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,11 +55,11 @@
     }
 }
 
-.chatbot__chat-container {
+.chat__body {
     font-family: $font-secondary;
     height: calc(100% - 120px);
     background: $gradient;
-    .chatbot__chat-subcontainer {
+    .chat__chat-subcontainer {
         display: flex;
         overflow-y: auto;
         flex-direction: column;
@@ -63,7 +69,7 @@
         background: rgba(255,255,255, 0.6);
         background:rgba(255,255,255, 0.6),
         linear-gradient(90deg, rgba(0,221,214,1) 0%, rgba(121,121,246,1) 100%);
-        .chatbot__chat-subcontainer--loading {
+        .chat__chat-subcontainer--loading {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,31 +84,12 @@
     }    
 }
 
-
-
-
 .message {
     display: flex;
     width: 100%;
     align-items: flex-end;
     font-family: $font-secondary;
-    margin: 5px 0px;
-}
-
-
-.message__title {
-    display: block;
-    font-size: $text-xs;
-    font-weight: 600;
-    margin-bottom: 7px;
-}
-
-.message__footer {
-    display: block;
-    font-size: $text-xs;
-    font-weight: 600;
-    margin-top: 7px;
-    margin-left: auto;
+    margin: 2px 0px;
 }
 
 .message__confirmation {
@@ -119,11 +106,59 @@
 }
 
 .message--received {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    .chatbox {
+        background-color: $white;
+        border-radius: 20px;
+        width: calc(100% - 40px);
+    }
+
+}
+
+.message--received-dialogue {
+    .chatbox {
+        background-color: $white;
+        border-radius: 20px 20px 20px 0px;
+        margin-left: 10px;
+        &:after {
+            clip-path: polygon(100% 67%, 0% 100%, 100% 100%);
+            content: "";
+            height: 50px;
+            width:25px;
+            background-color:$white;
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: -10px;
+        }
+    }
 }
 
 .message--sent {
     justify-content: flex-end;
+    .chatbox {
+        background-color: $purple-normal;
+        border-radius: 20px;
+        width: calc(100% - 40px);
+        color: $white;
+    }
+
+}
+.message--sent-dialogue {
+    .chatbox {
+        border-radius: 20px 20px 0px 20px;
+        &:after {
+            clip-path: polygon(0 67%, 0% 100%, 100% 100%);
+            content: "";
+            height:50px;
+            width:25px;
+            background-color: $purple-normal;
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            right: -10px;
+        }
+    }
 }
 
 .message--review {
@@ -153,48 +188,25 @@
     }
 }
 
-
-.message__chatbox {
+.chatbox {
     width: calc(100% - 30px);
     padding: $spacer-s $spacer-m;
     border-radius: 20px;
     font-size: $text-xs;
     position: relative;
-}
-
-.message__chatbox--sent {
-    background-color: $purple-normal;
-    border-radius: 20px 20px 0px 20px;
-    width: calc(100% - 40px);
-    color: $white;
-    &:after {
-        clip-path: polygon(0 67%, 0% 100%, 100% 100%);
-        content: "";
-        height:50px;
-        width:25px;
-        background-color: $purple-normal;
+    .chatbox__title {
         display: block;
-        position: absolute;
-        bottom: 0px;
-        right: -10px;
-
+        font-size: $text-xs;
+        font-weight: 600;
+        margin-bottom: 7px;
     }
-}
-
-.message__chatbox--received {
-    background-color: $white;
-    border-radius: 20px 20px 20px 0px;
-    margin-left: 10px;
-    &:after {
-        clip-path: polygon(100% 67%, 0% 100%, 100% 100%);
-        content: "";
-        height: 50px;
-        width:25px;
-        background-color:$white;
+    
+    .chatbox__footer {
         display: block;
-        position: absolute;
-        bottom: 0px;
-        left: -10px;
+        font-size: $text-xs;
+        font-weight: 600;
+        margin-top: 7px;
+        margin-left: auto;
     }
 }
 
@@ -220,12 +232,12 @@
         width: 30%;  
     }
     .card__col--right {
-        .message__title--card {
+        .chatbox__title--card {
             font-size: $text-s;
             border-bottom: 1px solid $grey-light-2;
             font-weight: 600;
         }
-        .message__body--card {
+        .chatbox__body--card {
             padding-top: 15px;
         }
         width: 70%;
@@ -233,7 +245,7 @@
     }
 }
 
-.chatbot__review {
+.chat__review {
     font-size: $text-xxl;
     display: flex;
     max-width: 250px;
@@ -245,12 +257,12 @@
     }
 }
 
-.chatbot__bottom {
+.chat__bottom {
     width: 100%;
     position: relative;
 }
 
-.chatbot__type {
+.chat__type {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,7 +274,7 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-.chatbot__input {
+.chat__input {
     height: 100%;
     width: calc(100% - 110px);
     margin: auto;
@@ -275,7 +287,7 @@
     box-shadow: none;
 }
 
-.chatbot__type-icon {
+.chat__type-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,7 +302,7 @@
     }
 }
 
-.chatbot__send {
+.chat__send {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,7 +320,7 @@
     }
 }
 
-.chatbot__close {
+.chat__footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,4 +358,96 @@
   .textarea[contenteditable]:empty::before {
     content: "Type your message...";
     color: $grey-light-1;
+  }
+
+  .chat__settings {
+      position: absolute;
+      height: calc(100% - 110px);
+      width: 100%;
+      top: 50px;
+      padding: 10px 20px;
+      background-color: $grey-background;
+    .settings__section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 20px 0px;
+        .button--circle {
+            background-color:$black;
+        }
+        .section__title {
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: $text-s;
+            font-family: $font-secondary;
+            font-weight: 550;
+            border-bottom: 2px solid $grey-light-2;
+        }
+        .section__body {
+            display: flex;
+            flex-wrap: wrap;
+            .checkbox-group {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+                .button--checkbox {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 170px;
+                    height: 30px;
+                    margin: 10px 0px;
+                    border-radius: 3px;
+                    background-color: $purple-normal;
+                    font-size: $text-xs;
+                    font-weight: 600;
+                }
+                .button--checkbox-checked {
+                    background-color: white;
+                    border: 2px solid $purple-normal;
+                    color: $purple-normal;
+                }
+                
+                .button--checkbox-unchecked {
+                    background-color: $purple-normal;
+                    color: $white;
+                    border: 0px;
+                }
+
+            }
+            .switch-group {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .switch-container {
+                    width: 50%;
+                }
+            }
+            .input-container {
+                width: 100%;
+            }
+            label {
+                width: 100%;
+            }
+            .dropdown-white-xs {
+                label {
+                    background-color: $white;
+                }
+                
+            }
+        }
+    }
+    .settings__header {
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: $text-m;
+        font-weight: 600;
+        .settings__title {
+            border-bottom: 2px solid $grey-light-2;
+            width: 60%;
+            text-align: center;
+        }
+    }
   }

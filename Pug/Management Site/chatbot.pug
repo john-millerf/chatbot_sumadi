@@ -1,54 +1,51 @@
 extend includes/layout-chatbot.pug
 block main-content
-    .chatbot
-        .chatbot__main
-            .chatbot__header
-                img(src="images/robot_avatar.png" class="chatbot__header-image")
-                .chatbot__title SUMADI Chatbot
-                .chatbot__close-top
+    .chat
+        .chat__main
+            .chat__header
+                .chat__avatar
+                .chat__title SUMADI Chatbot
+                .chat__close-top
                     i.fas.fa-times
-            .chatbot__chat-container
-                .chatbot__chat-subcontainer
-                    .message.message--received
+            .chat__body
+                .chat__chat-subcontainer
+                    .message.message--received.message--received-dialogue
                         img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received
-                            .message__title {CHATBOT.NAME}
-                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                        .chatbox
+                            .chatbox__title {CHATBOT.NAME}
+                            .chatbox__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
                     .message--divider
                     .message.message--sent
-                        .message__chatbox.message__chatbox--sent
-                            .message__body ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                    .message.message--sent
-                        .message__chatbox.message__chatbox--sent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                        .chatbox
+                            .chatbox__body ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message.message--sent.message--sent-dialogue
+                        .chatbox Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
                     .message__confirmation ✓ 10:21 am
                     .message--divider
                     .message.message--received
-                        img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received
-                            .message__title {CHATBOT.NAME}
-                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                        .chatbox
+                            .chatbox__title {CHATBOT.NAME}
+                            .chatbox__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
                     .message.message--received
+                        .chatbox
+                            .chatbox__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
+                    .message.message--received.message--received-dialogue
                         img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received
-                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma
-                    .message.message--received
-                        img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received
-                            .message__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        
-                            .message__footer {CHATBOT.NAME}
+                        .chatbox
+                            .chatbox__body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        
+                            .chatbox__footer {CHATBOT.NAME}
                     .message--divider
                     .message--option Option 1
                     .message--option Option 2
                     .message--option Option 3
                     .message--option Option 4
                     .message--divider
-                    .message.message--received
+                    .message.message--received.message--received-dialogue
                         img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received
-                            .message__body Please rate your experience before you leave.
+                        .chatbox
+                            .chatbox__body Please rate your experience before you leave.
                     .message.message--received
-                        img(src="images/robot_avatar.png" class="message__sent-icon")
-                        .message__chatbox.message__chatbox--received.chatbot__review
+                        .chatbox.chat__review
                             i.fas.fa-star
                             i.fas.fa-star
                             i.fas.fa-star
@@ -59,30 +56,85 @@ block main-content
                             .card__col--left
                                 img(src="images/Robot Avatars_4.png" class="message__sent-icon")
                             .card__col--right
-                                .message__title--card Generic Title 1
-                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                .chatbox__title--card Generic Title 1
+                                .chatbox__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     .message.message--received
                         .message--card
                             .card__col--left
                                 img(src="images/Robot Avatars_5.png" class="message__sent-icon")
                             .card__col--right
-                                .message__title--card Generic Title 2
-                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                .chatbox__title--card Generic Title 2
+                                .chatbox__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     .message.message--received
                         .message--card
                             .card__col--left
                                 img(src="images/Robot Avatars_6.png" class="message__sent-icon")
                             .card__col--right
-                                .message__title--card Generic Title 3
-                                .message__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt                                
+                                .chatbox__title--card Generic Title 3
+                                .chatbox__body--card Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt                                
                     .message.message__loading
                         img(src="images/robot_avatar.png" class="message__sent-icon")
                         +chatLoader()
-            .chatbot__bottom
-                .chatbot__type
-                    .chatbot__type-icon
+            .chat__bottom
+                .chat__type
+                    .chat__type-icon
                         .fas.fa-align-justify
                     span(class="textarea" role="textbox" contenteditable)
-                    .chatbot__send SEND
-        .chatbot__close
+                    .chat__send SEND
+            .chat__settings
+                .settings__section.settings__header
+                    .button.button--circle
+                        i.fas.fa-compress-alt
+                    .settings__title Menu Options
+                    .button.button--icon
+                        i.fas.fa-angle-down
+                .settings__section
+                    .section__title Section (checkbox)
+                    .section__body
+                        .checkbox-group
+                            .button--checkbox.button--checkbox-checked OPTION 01
+                            .button--checkbox.button--checkbox-unchecked OPTION 02
+                            .button--checkbox.button--checkbox-unchecked OPTION 03
+                            .button--checkbox.button--checkbox-checked OPTION 04
+                .settings__section
+                    .section__title Section (Inputs)
+                    .section__body
+                        label.form__label
+                            strong Field 01
+                        .input-container
+                            input(type="text" placeholder="PLACEHOLDER")
+                        .input-message.input-message--success Success in this field
+                        label.form__label
+                            strong Status
+                        .dropdown-white-xs
+                            input#status(type='checkbox')
+                            label(for='status')
+                                h5 Option 1
+                                i.fas.fa-chevron-down
+                            ul
+                                li.selected-category
+                                    span Inactive
+                                li
+                                    span Active
+                    .settings__section
+                        .section__title Section (Switches)
+                        .section__body
+                            .switch-group
+                                .switch-container
+                                    label.form__label
+                                        strong Field 01
+                                    .switch
+                                        input(type="checkbox" checked="checked")
+                                        span.slider
+                                            .switch__text.switch__text--on ON
+                                            .switch__text.switch__text--off OFF
+                                .switch-container                                            
+                                    label.form__label
+                                        strong Field 01
+                                    .switch
+                                        input(type="checkbox" checked="checked")
+                                        span.slider
+                                            .switch__text.switch__text--on ON
+                                            .switch__text.switch__text--off OFF                      
+        .chat__footer
             i.fas.fa-times

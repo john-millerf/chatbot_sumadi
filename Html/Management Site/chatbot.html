@@ -11,46 +11,47 @@
   </head>
   <body>
     <section>
-      <div class="chatbot">
-        <div class="chatbot__main">
-          <div class="chatbot__header"><img class="chatbot__header-image" src="images/robot_avatar.png">
-            <div class="chatbot__title">SUMADI Chatbot</div>
-            <div class="chatbot__close-top"><i class="fas fa-times"></i></div>
+      <div class="chat">
+        <div class="chat__main">
+          <div class="chat__header">
+            <div class="chat__avatar"></div>
+            <div class="chat__title">SUMADI Chatbot</div>
+            <div class="chat__close-top"><i class="fas fa-times"></i></div>
           </div>
-          <div class="chatbot__chat-container">
-            <div class="chatbot__chat-subcontainer">
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received">
-                  <div class="message__title">{CHATBOT.NAME}</div>
-                  <div class="message__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
+          <div class="chat__body">
+            <div class="chat__chat-subcontainer">
+              <div class="message message--received message--received-dialogue"><img class="message__sent-icon" src="images/robot_avatar.png">
+                <div class="chatbox">
+                  <div class="chatbox__title">{CHATBOT.NAME}</div>
+                  <div class="chatbox__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
                 </div>
               </div>
               <div class="message--divider"></div>
               <div class="message message--sent">
-                <div class="message__chatbox message__chatbox--sent">
-                  <div class="message__body">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
+                <div class="chatbox">
+                  <div class="chatbox__body">ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
                 </div>
               </div>
-              <div class="message message--sent">
-                <div class="message__chatbox message__chatbox--sent">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
+              <div class="message message--sent message--sent-dialogue">
+                <div class="chatbox">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
               </div>
               <div class="message__confirmation">✓ 10:21 am</div>
               <div class="message--divider"></div>
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received">
-                  <div class="message__title">{CHATBOT.NAME}</div>
-                  <div class="message__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
+              <div class="message message--received">
+                <div class="chatbox">
+                  <div class="chatbox__title">{CHATBOT.NAME}</div>
+                  <div class="chatbox__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
                 </div>
               </div>
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received">
-                  <div class="message__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
+              <div class="message message--received">
+                <div class="chatbox">
+                  <div class="chatbox__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma</div>
                 </div>
               </div>
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received">
-                  <div class="message__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        </div>
-                  <div class="message__footer">{CHATBOT.NAME}</div>
+              <div class="message message--received message--received-dialogue"><img class="message__sent-icon" src="images/robot_avatar.png">
+                <div class="chatbox">
+                  <div class="chatbox__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ma                                        </div>
+                  <div class="chatbox__footer">{CHATBOT.NAME}</div>
                 </div>
               </div>
               <div class="message--divider"></div>
@@ -59,20 +60,20 @@
               <div class="message--option">Option 3</div>
               <div class="message--option">Option 4</div>
               <div class="message--divider"></div>
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received">
-                  <div class="message__body">Please rate your experience before you leave.</div>
+              <div class="message message--received message--received-dialogue"><img class="message__sent-icon" src="images/robot_avatar.png">
+                <div class="chatbox">
+                  <div class="chatbox__body">Please rate your experience before you leave.</div>
                 </div>
               </div>
-              <div class="message message--received"><img class="message__sent-icon" src="images/robot_avatar.png">
-                <div class="message__chatbox message__chatbox--received chatbot__review"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+              <div class="message message--received">
+                <div class="chatbox chat__review"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
               </div>
               <div class="message message--received">
                 <div class="message--card">
                   <div class="card__col--left"><img class="message__sent-icon" src="images/Robot Avatars_4.png"></div>
                   <div class="card__col--right">
-                    <div class="message__title--card">Generic Title 1</div>
-                    <div class="message__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                    <div class="chatbox__title--card">Generic Title 1</div>
+                    <div class="chatbox__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
                   </div>
                 </div>
               </div>
@@ -80,8 +81,8 @@
                 <div class="message--card">
                   <div class="card__col--left"><img class="message__sent-icon" src="images/Robot Avatars_5.png"></div>
                   <div class="card__col--right">
-                    <div class="message__title--card">Generic Title 2</div>
-                    <div class="message__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
+                    <div class="chatbox__title--card">Generic Title 2</div>
+                    <div class="chatbox__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</div>
                   </div>
                 </div>
               </div>
@@ -89,8 +90,8 @@
                 <div class="message--card">
                   <div class="card__col--left"><img class="message__sent-icon" src="images/Robot Avatars_6.png"></div>
                   <div class="card__col--right">
-                    <div class="message__title--card">Generic Title 3</div>
-                    <div class="message__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt                                </div>
+                    <div class="chatbox__title--card">Generic Title 3</div>
+                    <div class="chatbox__body--card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt                                </div>
                   </div>
                 </div>
               </div>
@@ -99,16 +100,78 @@
               </div>
             </div>
           </div>
-          <div class="chatbot__bottom">
-            <div class="chatbot__type">
-              <div class="chatbot__type-icon">
+          <div class="chat__bottom">
+            <div class="chat__type">
+              <div class="chat__type-icon">
                 <div class="fas fa-align-justify"></div>
               </div><span class="textarea" role="textbox" contenteditable></span>
-              <div class="chatbot__send">SEND</div>
+              <div class="chat__send">SEND</div>
+            </div>
+          </div>
+          <div class="chat__settings">
+            <div class="settings__section settings__header">
+              <div class="button button--circle"><i class="fas fa-compress-alt"></i></div>
+              <div class="settings__title">Menu Options</div>
+              <div class="button button--icon"><i class="fas fa-angle-down"></i></div>
+            </div>
+            <div class="settings__section">
+              <div class="section__title">Section (checkbox)</div>
+              <div class="section__body">
+                <div class="checkbox-group">
+                  <div class="button--checkbox button--checkbox-checked">OPTION 01</div>
+                  <div class="button--checkbox button--checkbox-unchecked">OPTION 02</div>
+                  <div class="button--checkbox button--checkbox-unchecked">OPTION 03</div>
+                  <div class="button--checkbox button--checkbox-checked">OPTION 04</div>
+                </div>
+              </div>
+            </div>
+            <div class="settings__section">
+              <div class="section__title">Section (Inputs)</div>
+              <div class="section__body">
+                <label class="form__label"><strong>Field 01</strong></label>
+                <div class="input-container">
+                  <input type="text" placeholder="PLACEHOLDER">
+                </div>
+                <div class="input-message input-message--success">Success in this field</div>
+                <label class="form__label"><strong>Status</strong></label>
+                <div class="dropdown-white-xs">
+                  <input id="status" type="checkbox">
+                  <label for="status">
+                    <h5>Option 1</h5><i class="fas fa-chevron-down"></i>
+                  </label>
+                  <ul>
+                    <li class="selected-category"><span>Inactive</span></li>
+                    <li><span>Active</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="settings__section">
+                <div class="section__title">Section (Switches)</div>
+                <div class="section__body">
+                  <div class="switch-group">
+                    <div class="switch-container">
+                      <label class="form__label"><strong>Field 01</strong></label>
+                      <div class="switch">
+                        <input type="checkbox" checked="checked"><span class="slider">
+                          <div class="switch__text switch__text--on">ON</div>
+                          <div class="switch__text switch__text--off">OFF</div></span>
+                      </div>
+                    </div>
+                    <div class="switch-container">                                           
+                      <label class="form__label"><strong>Field 01</strong></label>
+                      <div class="switch">
+                        <input type="checkbox" checked="checked"><span class="slider">
+                          <div class="switch__text switch__text--on">ON</div>
+                          <div class="switch__text switch__text--off">OFF</div></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="chatbot__close"><i class="fas fa-times"></i></div>
+        <div class="chat__footer"><i class="fas fa-times"></i></div>
       </div>
     </section>
   </body>
